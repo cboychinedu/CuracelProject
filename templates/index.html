@@ -1,0 +1,165 @@
+<!DOCTYPE html> 
+<html lang="en" dir="ltr"> 
+    <head> 
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+        
+        <!---Referencing the css style sheet ---> 
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}"> 
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        
+        <title> Used Car Price Prediction </title> 
+    </head> 
+    
+    <body> 
+
+        <div class="firstDiv">
+            <br> 
+            <h2> <strong> <center> What's Your Car Worth? </center> </strong>  </h2> 
+            <br><br> 
+        
+        </div> 
+
+        <div class="secondDiv"> 
+        
+        <br> 
+        <p> <i>Get your car <b>worth</b> by filling the form below. </i> </p> 
+        
+        <form method="POST"> 
+            <!--Getting the Brand Name-->
+            <b>Brand Name: </b><br> 
+             <ul>
+                <li>
+                <p> <i> This is the name or trade name of the vehicle and it is usually applied by a manufacture<br> or organization to a particular product or service.
+                    Examples: Honda, Kia, Nissan. e.t.c. </i> </p> 
+                </li>
+            </ul> 
+            <input name="brand_name" height="10" size="70" placeholder="Brand Name"><br><br> 
+            
+            <!-- Getting the location the car was purchased
+            <b>Car Location: </b><br> 
+                <ul> 
+                    <li> <p> <i> This is the location in which the car is being sold or is available for purchase </i> </p> </li> 
+                </ul> 
+            <input name="car_location" height="10" size="70" placeholder="Car Location"><br><br> --> 
+            
+            <!--Getting the year of purchased-->
+            <b>Year / Edition: </b><br> 
+                <ul> 
+                    <li> <p> <i> This is the year or edition of the car model. </i> </p> </li> 
+                </ul> 
+            <input name="year" height="10" size="70" placeholder="Year Of Purchase"><br><br> 
+            
+            <!--Getting the Kilometers Driven-->
+            <b>Kilometers Driven: </b><br> 
+                <ul> 
+                    <li> <p> <i> This is the total kilometers driven by the car by the previous owners in Km. </i> </p> 
+                </ul> 
+            <input name="kilometers_driven" height="10" size="70" placeholder="Kilometers Driven"><br><br> 
+            
+            <!--Getting the fuel type --> 
+            <b>Fuel Type: </b><br>
+                <ul> 
+                    <li> <p> <i> This is the type of fuel used by the car, (Petrol, Diesel, Electric, CNG, LPG) </i> </p> 
+                </ul> 
+            <input name="fuel_type" height="10" size="70" placeholder="Car Fuel Type"><br><br> 
+            
+            <!--Getting Transmission type-->
+            <b>Transmission: </b><br> 
+                <ul> 
+                    <li> <p> <i> This is the type of transmission used by the car. (Automatic / Manual) </i> </p> 
+                </ul> 
+            <input name="transmission" height="10" size="70" placeholder="Car Transmission"><br><br> 
+            
+            <!--Getting the Owner Type-->
+            <b> Owner Type: </b><br> 
+                <ul> 
+                    <li> <p> <i> This is the type of the car for the owner. (First Hand Or Second Hand)  </i> </p> 
+                </ul> 
+            <input name="owner_type" height="10" size="70" placeholder="Car Type"><br><br> 
+            
+            <!--Getting the Mileage Value in "" -->
+            <b> Mileage: </b><br> 
+                <ul> 
+                    <li> <p> <i> This is the standard mileage offered by the car compand in kmpl or km/kg </i> </p> 
+                </ul> 
+            <input name="mileage" height="10" size="70" placeholder="Car Mileage"><br><br> 
+            
+            <!---Getting the Engine Capacity ---> 
+            <b> Engine: </b><br> 
+                <ul> 
+                    <li> <p> <i> This is the displacement volume of the engine in CC. </i> </p> 
+                </ul> 
+            <input name="engine" height="10" size="70" placeholder="Car Engine"><br><br>
+            
+            <!---Getting the Power value for the car engine ---> 
+            <b> Engine Power: </b><br> 
+                <ul> 
+                    <li> <p> <i> This is the maximum power of the engine in bhp. </i> </p> 
+                </ul> 
+            <input name="engine_power" height="10" size="70" placeholder="Engine Power"><br><br> 
+            
+            <!--- Getting the Number of seats for the car ---> 
+            <b> Number Of Seats: </b><br> 
+                <ul> 
+                    <li> <p> <i> This is the number of seats in the car. </i> </p> 
+                </ul> 
+            <input name="seat_number" height="10" size="70" placeholder="Seat Number"><br><br> 
+            <br>
+            <input type="submit" value="Send" class="btn btn-secondary btn-lg"> </input>
+            
+        </div>    
+        <br> <br> <br> 
+        </form>
+
+        <!-- <div>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Home</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Used Cars For Sale</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Reports</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Maintenance</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Car Mileage</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Research</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Help</a>
+                    </li>
+                
+                </ul>
+                
+            </div>
+        </nav> -->
+
+         <div class="firstDiv">
+            <br>
+      
+           <br><br><hr>
+        
+        </div> 
+         
+     
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+        <div> 
+        
+    </body>
+ 
+
+</html> 

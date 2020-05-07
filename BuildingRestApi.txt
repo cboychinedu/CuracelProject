@@ -1,0 +1,90 @@
+## Defintion Of Rest 
+- Rest stands for representational state transfer and is an architectural style used in 
+modern web development. 
+It defines a set of rules/constraints for a web application to send and receive data. 
+
+#################### Method -1: using Only Flask 
+
+## Using flask to make an api 
+# Importing the necessary modules 
+from flask import Flask, jsonify, request 
+
+# Creating a flask app 
+app = Flask(__name__) 
+
+# on the terminal type: curl http://127.0.0.1:5000/ 
+# returns hello world when we use GET. 
+# returns the data that we send when we use POST. 
+@app.route('/', methods = ['GET', 'POST'])
+def home():
+    if (request.method == 'GET'):
+        # setting a variable called data 
+        data = "hello world" 
+        return jsonify({'data': data})
+
+
+# A simple function to calculate the square of a number 
+# the number to be squared is sent in the URL when we use GET 
+# on the terminal type: curl http://127.0.0.1:5000 / home / 10 
+# this returns 100 (square of 10) 
+@app.route('/home/<int:num>', methods = ['GET']) 
+def disp(num): 
+    return jsonify({'data': num**2})
+
+
+# driver function 
+if __name__ == '__main__': 
+    app.run(debug = True)
+
+
+################### Method -2: Using flask-restful 
+
+- Flask Restful is an extension for Flask that adds support for building REST APIs in python using Flask 
+as the back-end. It encourages best practices and is very easy to set up. Flask restful is very easy to pick up 
+if you're already familiar with flask. 
+- In flask_restful, the main building block is a resource. Each resource can have several methods associated with it 
+such as GET, POST, PUT, DELETE, etc. For example, there could be a resource that calculates the square of a number whenever a 
+get request is sent to it. Each resource is a class that inherits from the Resource class of flask_restful. Once the resource is 
+created and defined, we can add our custom re-source to the api and specify a URL path for that corresponding resource. 
+
+# Using flask_restful 
+from flask import Flask, jsonify, request 
+from flask_restful import Resource, Api 
+
+# Creating the flask app 
+app = Flask(__name__)
+# Creating an API object 
+api = Api(app)
+
+# making a class for a particular resource 
+# the get, post methods correspond to get and post requests 
+# they are automatically mapped by flask_restful. 
+# other methods include put, delete, etc. 
+class Hello(Resource): 
+    def __init__(self):
+        pass 
+    
+    # corresponds to the GET request. 
+    # this function is called whenever there 
+    # is a GET request for this resource 
+    def get(self):
+        return jsonify({'message': 'hello world'})
+
+    # Corresponds to POST request 
+    def post(self):
+        # 
+        # Getting the status code 
+        data = request.get_json() 
+        # 
+        return jsonify({'data': data})
+
+# Adding the defined resources along with their corresponding urls 
+api.add_resource(Hello, '/')
+api.add_resource(square, '/square/<int:num>')
+
+# Driver function 
+if __mame__ == '__main__': 
+    app.run(debug = True)
+
+
+    

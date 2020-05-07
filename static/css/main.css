@@ -1,0 +1,68 @@
+/* Setting some basic parameters for the body tag */ 
+body {
+    margin: 0 auto; 
+    font-family: "Montserrat", sans-serif; 
+    background-color: rgb(22, 19, 19);
+    background-image: url("../images/car2.jpg");
+    background-repeat: no-repeat;
+    background-position: center; 
+    background-size: cover; 
+    
+
+}
+
+/* Setting A background image for the body tag */ 
+/* body {
+
+    background: url(); 
+    background-repeat: no-repeat; 
+
+}
+
+*/ 
+
+/* Setting the properties for the class of the first division */ 
+/* Note that the class selector was used here for the first div */ 
+.firstDiv{
+    background-color: rgb(12, 17, 44);
+    background-position: top;
+    padding-top: 2px;
+    
+
+}
+
+h2 {
+    color: whitesmoke; 
+    padding-top: 1px 
+}
+
+.secondDiv {
+    /* Padding works with Top Right Bottom Left */ 
+    padding: 0 16px 16px 16px; 
+    
+}
+
+.lastDiv {
+    background-color: rgb(37, 40, 54); 
+    padding: 20px; 
+    color: white; 
+}
+
+/* Placing the values for the ids */ 
+#firstTable {
+    font-size: 15px; 
+    font-display: auto; 
+    padding-top: 6%;
+    padding-bottom: 5%; 
+    
+}
+
+.div_id {
+    color: whitesmoke; 
+}
+
+p {
+    font-size: 17px;
+    font-display: bold;
+    font-weight: 490;
+}

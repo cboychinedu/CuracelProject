@@ -1,0 +1,6 @@
+flask
+flask-restful
+Werkzeug
+joblib
+xgboost
+WTForms 
