@@ -1,2 +1,2 @@
 # CuracelProject
-Just A Project For Curacel 
+Car Price Prediction Model For Curacel
