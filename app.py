@@ -30,16 +30,35 @@ def home():
 @app.route("/", methods=["POST"])
 def InputText():
     # Getting the name values for the car 
-    BrandName = request.form['brand_name'].lower() 
+    BrandName = request.form['brand_name'].lower()
+    BrandName = BrandName.replace(" ", "")
+    
     Year = request.form['year']
+    Year = Year.replace(" ", "")
+    
     KilometersDriven = request.form['kilometers_driven']
-    FuelType = request.form['fuel_type'].lower() 
+    KilometersDriven = KilometersDriven.replace(" ", "")
+    
+    FuelType = request.form['fuel_type'].lower()
+    FuelType = FuelType.replace(" ", "")
+     
     Transmission = request.form['transmission'].lower() 
+    Transmission = Transmission.replace(" ", "")
+    
     OwnerType = request.form['owner_type'].lower() 
+    OwnerType = OwnerType.replace(" ", "")
+    
     Mileage = request.form['mileage']
+    Mileage = Mileage.replace(" ", "")
+    
     Engine = request.form['engine']
+    Engine = Engine.replace(" ", "")
+    
     EnginePower = request.form['engine_power']
+    EnginePower = EnginePower.replace(" ", "")
+    
     SeatNumber = request.form['seat_number']
+    SeatNumber = SeatNumber.replace(" ", "")
     
     # Creating a tuple variable and saving the following parameters for the car 
     # predictors into it 
